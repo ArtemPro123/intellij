@@ -5,6 +5,15 @@ public class Customer {
     private String name;
     private String address;
     private double cashOnHand;
+    private int creditScore;
+
+    public int getCreditScore() {
+        return creditScore;
+    }
+
+    public void setCreditScore(int creditScore) {
+        this.creditScore = creditScore;
+    }
 
     public String getName() {
         return name;
@@ -31,8 +40,8 @@ public class Customer {
     }
 
 
-    public void purchaseCar(Vehicle vehicle, Employee emp, boolean finance){
+    public void purchaseCar(Vehicle vehicle, Employee emp, boolean finance, int creditScore){
         //this represents the instance of the customer
-        emp.handleCustomer(this, finance, vehicle);
+        emp.handleCustomer(this, finance, vehicle, creditScore);
     }
 }

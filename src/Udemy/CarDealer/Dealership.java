@@ -21,6 +21,7 @@ public class Dealership {
         cust1.setName("Tom");
         cust1.setAddress("123 Anything Street");
         cust1.setCashOnHand(120000);
+        cust1.setCreditScore(400);
 
         System.out.println("Welcome to the Dealership!");
         System.out.println("Here is our stock: ");
@@ -52,7 +53,7 @@ public class Dealership {
         }
 
 
-        cust1.purchaseCar(choice, emp, financeboolean);
+        cust1.purchaseCar(choice, emp, financeboolean, cust1.getCreditScore());
 
 
 

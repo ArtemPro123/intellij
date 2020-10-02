@@ -3,11 +3,16 @@ package Udemy.CarDealer;
 
 public class Employee {
 
-    public void handleCustomer(Customer cust, boolean finance, Vehicle vehicle){
+    public void handleCustomer(Customer cust, boolean finance, Vehicle vehicle, int creditScore){
 
         if(finance == true){
-            double loanAmount = vehicle.getPrice() - cust.getCashOnHand();
-            runCreditHistory(cust, loanAmount);
+            if(creditScore>500){
+                double loanAmount = vehicle.getPrice() - cust.getCashOnHand();
+                runCreditHistory(cust, loanAmount);
+            } else{
+                System.out.println("Sorry your application was rejected!");
+            }
+
         } else if(vehicle.getPrice() <= cust.getCashOnHand()) {
             //else the customer pays in cash
             processTransaction(cust, vehicle);
